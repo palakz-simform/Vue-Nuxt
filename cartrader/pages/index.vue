@@ -1,3 +1,9 @@
+<script setup>
+useHead({
+
+})
+</script>
+
 <template>
     <div>
         <NavBar />
