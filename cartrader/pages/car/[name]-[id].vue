@@ -1,4 +1,5 @@
 <script setup>
+
 const route = useRoute()
 const { cars } = useCars()
 const { toTitleCase } = useUtilities()
@@ -14,9 +15,16 @@ const car = computed(() => {
         return c.id == parseInt(route.params.id)
     })
 })
+
+if (!car.value) {
+    throw createError({
+        statusCode: 404,
+        message: `Car with id of ${route.params.id} does not exist`
+    })
+}
 </script>
 <template>
-    <div v-if="car">
+    <div>
         <!-- CAR DETAIL PAGE -->
 
         <CarDetailHero :car="car" />
