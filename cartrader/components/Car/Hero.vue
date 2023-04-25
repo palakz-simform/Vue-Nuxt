@@ -1,3 +1,4 @@
+
 <template>
     <div
         class="relative h-screen w-100 bg-no-repeat bg-cover bg-bottom bg-[url('https://wallpapers.com/images/featured/bfy5ep0eyjabuzim.jpg')]">
@@ -11,4 +12,4 @@
         </div>
         <div class="z-1 absolute w-full h-full bg-black opacity-50"></div>
     </div>
-</template>
+</template >
