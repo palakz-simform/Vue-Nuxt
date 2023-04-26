@@ -1,5 +1,8 @@
+<script setup>
+</script>
+
 <template>
-    <div>
-        <CarCards />
-    </div>
+  <div>
+    <CarCards />
+  </div>
 </template>
