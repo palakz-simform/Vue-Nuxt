@@ -1,6 +1,15 @@
 <script setup>
 definePageMeta({
   layout: "custom",
+  middleware: [
+    function (to, from) {
+      const user = useSupabaseUser();
+      if (user.value) {
+        return
+      }
+      return navigateTo("/login")
+    }
+  ]
 });
 
 const { makes } = useCars();
@@ -71,26 +80,10 @@ const inputs = [
       <h1 class="text-6xl">Create a New Listing</h1>
     </div>
     <div class="shadow rounded p-3 mt-5 flex flex-wrap justify-between">
-      <CarAdSelect
-        title="Make *"
-        :options="makes"
-        name="make"
-        @change-input="onChangeInput"
-      />
-      <CarAdInput
-        v-for="input in inputs"
-        :key="input.id"
-        :title="input.title"
-        :name="input.name"
-        :placeholder="input.placeholder"
-        @change-input="onChangeInput"
-      />
-      <CarAdTextarea
-        title="Description *"
-        name="description"
-        placeholder=""
-        @change-input="onChangeInput"
-      />
+      <CarAdSelect title="Make *" :options="makes" name="make" @change-input="onChangeInput" />
+      <CarAdInput v-for="input in inputs" :key="input.id" :title="input.title" :name="input.name"
+        :placeholder="input.placeholder" @change-input="onChangeInput" />
+      <CarAdTextarea title="Description *" name="description" placeholder="" @change-input="onChangeInput" />
       <CarAdImage @change-input="onChangeInput" />
     </div>
   </div>
