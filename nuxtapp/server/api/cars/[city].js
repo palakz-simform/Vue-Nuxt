@@ -1,6 +1,7 @@
 import cars from "@/data/cars.json"
 
 export default defineEventHandler((event) => {
+    console.log("I am hit")
     const { city } = event.context.params;
     const { make, minPrice, maxPrice } = getQuery(event);
 
