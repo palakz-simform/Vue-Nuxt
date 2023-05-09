@@ -2,6 +2,8 @@
 definePageMeta({
     layout: 'custom'
 })
+
+
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 const login = async () => {
