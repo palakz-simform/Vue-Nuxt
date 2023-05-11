@@ -4,7 +4,7 @@ const { isDarkMode } = useDarkMode()
 </script>
 <template>
   {{ isDarkMode }}
-  <div>
+  <div :style="isDarkMode ? { backgroundColor: 'black' } : ''">
     <Nav />
     <Heading />
     <Cards />

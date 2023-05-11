@@ -1,11 +1,14 @@
+<script setup lang="ts">
+const { isDarkMode } = useDarkMode()
+</script>
 <template>
   <div class="container">
     <div class="content-container">
       <div class="text-container">
         <h4>Based on your reading history</h4>
-        <h2>Designing search for mobile apps</h2>
-        <p class="date">Aug 26th, 2021, 4pm</p>
-        <p class="snippet">
+        <h2 :style="isDarkMode ? { color: 'white' } : ''">Designing search for mobile apps</h2>
+        <p :style="isDarkMode ? { color: 'white' } : ''" class="date">Aug 26th, 2021, 4pm</p>
+        <p :style="isDarkMode ? { color: 'white' } : ''" class="snippet">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, in.
           Obcaecati in iusto minima impedit assumenda perferendis natus tempore
           modi ducimus. Blanditiis, quis. Maxime delectus ducimus assumenda vel
@@ -16,8 +19,7 @@
       </div>
       <img
         src="https://media.istockphoto.com/photos/mobile-responsive-website-development-wireframe-design-preview-on-picture-id844419966?b=1&k=20&m=844419966&s=170667a&w=0&h=Dfps34xqMI2CaLkKMznJnESU4G_XY5evvlC9ui9XEJk="
-        alt=""
-      />
+        alt="" />
     </div>
   </div>
 </template>

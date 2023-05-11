@@ -2,8 +2,8 @@
 const { isDarkMode } = useDarkMode()
 </script>
 <template>
-  <nav>
-    <div>
+  <nav :style="isDarkMode ? { backgroundColor: 'rgb(72,72,72)' } : ''">
+    <div :style="isDarkMode ? { color: 'white' } : ''">
       <h1>Artikle </h1>
       <label class="switch">
         <input type="checkbox" />
